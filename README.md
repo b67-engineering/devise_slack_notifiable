@@ -2,6 +2,9 @@
 
 Devise slack notifications gem. It posts message after registration and confirmation (if Devise confirmations strategy is enabled).
 
+[![codecov](https://codecov.io/gh/invoicity/devise_slack_notifiable/branch/master/graph/badge.svg)](https://codecov.io/gh/invoicity/devise_slack_notifiable)
+[![ruby](https://github.com/invoicity/devise_slack_notifiable/workflows/Ruby/badge.svg)](https://github.com/invoicity/devise_slack_notifiable/actions)
+
 ## Installation
 
 Add this line to your application's Gemfile:
