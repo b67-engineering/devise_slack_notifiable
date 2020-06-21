@@ -33,6 +33,17 @@ RSpec.describe DeviseSlackNotifiable::Configuration do
     it 'writes' do
       expect(subject).to respond_to(:registration_message_formatter=)
     end
+
+    context 'usage' do
+      let(:entity) do
+        double('Entity', model_name: double('ModelName', human: 'ModelName'))
+      end
+
+      it 'creates message' do
+        expect(subject.registration_message_formatter.call(entity))
+          .to be_eql('Yeah 🎉! Looks like we have new ModelName! 😊')
+      end
+    end
   end
 
   context 'confirmation_message_formatter' do
@@ -42,6 +53,17 @@ RSpec.describe DeviseSlackNotifiable::Configuration do
 
     it 'writes' do
       expect(subject).to respond_to(:confirmation_message_formatter=)
+    end
+
+    context 'usage' do
+      let(:entity) do
+        double('Entity', model_name: double('ModelName', human: 'ModelName'))
+      end
+
+      it 'creates message' do
+        expect(subject.confirmation_message_formatter.call(entity))
+          .to be_eql('ModelName have just confirmed his account 🥂')
+      end
     end
   end
 

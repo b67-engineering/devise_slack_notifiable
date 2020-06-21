@@ -52,7 +52,7 @@ RSpec.describe DeviseSlackNotifiable::Notifier do
         expect_any_instance_of(Slack::Notifier).not_to receive(:ping)
       end
 
-      it 'shouldn\'t send message' do
+      it 'should not send message' do
         subject
       end
     end
