@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/invoicity/devise_slack_notifiable'
   spec.metadata['changelog_uri'] = 'https://github.com/invoicity/devise_slack_notifiable/releases'
 
+  spec.add_dependency 'rails'
   spec.add_dependency 'slack-notifier'
 
   # Specify which files should be added to the gem when it is released.
