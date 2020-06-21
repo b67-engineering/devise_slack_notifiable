@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe DeviseSlackNotifiable do
   subject { DeviseSlackNotifiable.configuration }
 
-  context 'configuration' do
+  describe '#configuration' do
     context 'enabled' do
       context 'when default' do
         it 'returns value' do
