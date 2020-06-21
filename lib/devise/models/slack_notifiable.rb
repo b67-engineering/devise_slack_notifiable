@@ -3,6 +3,7 @@
 module Devise
   module Models
     module SlackNotifiable
+
     end
   end
 end
