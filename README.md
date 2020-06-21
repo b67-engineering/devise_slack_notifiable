@@ -33,6 +33,13 @@ DeviseSlackNotifiable.configure do |config|
 end
 ```
 
+And add :slack_notifiable to the devise call in your model (we’re assuming here you already have a User model with some Devise modules):
+```ruby
+class User < ActiveRecord::Base
+  devise :database_authenticatable, :confirmable, :slack_notifiable
+end
+```
+
 And you are ready to go!
 
 ## Development
