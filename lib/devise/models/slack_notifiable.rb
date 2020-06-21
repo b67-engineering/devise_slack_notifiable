@@ -17,17 +17,24 @@ module Devise
         end
 
         def confirmation_notification
-          # FIXME: Create proper notification after confirmation
+          return unless DeviseSlackNotifiable.configuration.confirmation_message_enabled
 
-          notifier = DeviseSlackNotifiable::Notifier.new
-          notifier.send_message("User(#{id}) has been confirmed")
+          send_slack_notification(
+            DeviseSlackNotifiable.configuration.confirmation_message_formatter
+          )
         end
 
         def registration_notification
-          # FIXME: Create proper notification after registration
+          send_slack_notification(
+            DeviseSlackNotifiable.configuration.registration_message_formatter
+          )
+        end
 
+        private
+
+        def send_slack_notification(formatter)
           notifier = DeviseSlackNotifiable::Notifier.new
-          notifier.send_message("User(#{id}) has been created")
+          notifier.send_message(self, formatter)
         end
       end
     end

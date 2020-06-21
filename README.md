@@ -51,8 +51,38 @@ end
 
 And you are ready to go!
 
-## Messages customization
+## Messages
+Messages overview:
+
+![Registration notification](./docs/registration-notification.png)
+![Confirmation notification](./docs/confirmation-notification.png)
+
+### Customization
+
+#### Context
+If You want to add more fields to context check out configuration in initializer - it's based on `context_fields`.
+
+Example with context extended by first and last name (as on screenshots):
+```ruby
+config.context_fields = [:id, :email, :first_name, :last_name]
+```
+
+#### Sending own messages
 TODO!
+
+#### Message formatting
+You can customize messages by initializer:
+```ruby
+config.registration_message_formatter = lambda { |entity|
+                                          "Yeah 🎉! Looks like we have new #{entity.model_name.human}! 😊"
+                                        }
+```
+
+```ruby
+config.confirmation_message_formatter = lambda { |entity|
+                                          "#{entity.model_name.human} have just confirmed his account 🥂"
+                                        }
+```
 
 ## Development
 
