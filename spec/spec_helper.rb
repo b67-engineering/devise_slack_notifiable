@@ -15,9 +15,12 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-end
 
-# Default configuration
-DeviseSlackNotifiable.configure do |_|
-  # Default configuration
+  config.before(:each) do
+    # Reset and creat default configuration
+    DeviseSlackNotifiable.configuration = nil
+    DeviseSlackNotifiable.configure do |_|
+      # Default configuration
+    end
+  end
 end

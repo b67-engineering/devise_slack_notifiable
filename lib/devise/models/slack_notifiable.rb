@@ -13,7 +13,7 @@ module Devise
         def after_confirmation
           confirmation_notification
 
-          super
+          super if defined?(super)
         end
 
         def confirmation_notification
