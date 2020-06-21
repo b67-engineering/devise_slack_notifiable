@@ -4,6 +4,8 @@ require 'bundler/setup'
 require 'rails'
 require 'active_support'
 require 'devise_slack_notifiable'
+require 'simplecov'
+require 'codecov'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -24,3 +26,6 @@ RSpec.configure do |config|
     end
   end
 end
+
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
