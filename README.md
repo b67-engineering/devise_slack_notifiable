@@ -20,20 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-Prepare Slack Webhook, It should look like `https://hooks.slack.com/services/XXX/XXX/XXX`.
+### 1. Slack
+Prepare Slack Webhook - it should look like `https://hooks.slack.com/services/XXX/XXX/XXX`.
 
-Not sure how to do that? Check out slack documentation:
+Not sure how to do that? Check out [slack documentation](https://api.slack.com/messaging/webhooks#getting_started).
 
-    https://api.slack.com/messaging/webhooks#getting_started
-
-After preparing Slack Webhook create initializer (`config/initializers/devise_slack_notifiable.rb`):
+### 2. Application
+After preparing Slack Webhook create initializer - `config/initializers/devise_slack_notifiable.rb`:
 ```ruby
 DeviseSlackNotifiable.configure do |config|
-  config.slack_webhook = 'SLACK_WEBHOOK_URL'
+  config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL'
 end
 ```
 
-And add :slack_notifiable to the devise call in your model (we’re assuming here you already have a User model with some Devise modules):
+After creating initializer add `:slack_notifiable` to the devise call in your model (we’re assuming here you already have a User model with some Devise modules):
 ```ruby
 class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :slack_notifiable
@@ -41,6 +41,9 @@ end
 ```
 
 And you are ready to go!
+
+## Messages customization
+TODO!
 
 ## Development
 
