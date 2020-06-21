@@ -3,7 +3,13 @@
 require 'slack-notifier'
 
 module DeviseSlackNotifiable
+  # Module <-> Slack communication layer
+  # and payload builder
   class Notifier
+
+    # DeviseSlackNotifiable::Notifier constructor.
+    #
+    # Creates Slack::Notifier instance
     def initialize
       return unless enabled?
 
@@ -31,18 +37,33 @@ module DeviseSlackNotifiable
 
     attr_reader :client
 
+    # Integration enabled?
+    #
+    # @return [Boolean]
     def enabled?
       DeviseSlackNotifiable.configuration.enabled
     end
 
+    # Webhook URL
+    #
+    # @return [String, NilClass]
     def webhook
       DeviseSlackNotifiable.configuration.slack_webhook
     end
 
+    # Context fields
+    #
+    # @return [Array]
     def context_fields
       DeviseSlackNotifiable.configuration.context_fields
     end
 
+    # Message builder
+    #
+    # @param [String] message
+    # @param [ActiveRecord::Base] entity
+    #
+    # @return [Hash]
     def formatter(message, entity)
       {
         blocks: [

@@ -11,6 +11,9 @@ module DeviseSlackNotifiable
     attr_accessor :configuration
   end
 
+  # Configuration block
+  #
+  # @yield
   def self.configure
     self.configuration ||= DeviseSlackNotifiable::Configuration.new
     yield(configuration)

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DeviseSlackNotifiable
+  # Configuration container
   class Configuration
     attr_accessor :enabled,
                   :slack_webhook,
@@ -9,6 +10,9 @@ module DeviseSlackNotifiable
                   :confirmation_message_enabled,
                   :context_fields
 
+    # DeviseSlackNotifiable::Configuration constructor.
+    #
+    # Sets default values
     def initialize
       @enabled = false
       @slack_webhook = nil
