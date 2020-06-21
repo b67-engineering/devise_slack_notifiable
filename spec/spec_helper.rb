@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
+require 'rails'
 require 'active_support'
 require 'devise_slack_notifiable'
 
