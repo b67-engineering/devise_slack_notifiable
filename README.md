@@ -29,7 +29,7 @@ Not sure how to do that? Check out [slack documentation](https://api.slack.com/m
 After preparing Slack Webhook create initializer - `config/initializers/devise_slack_notifiable.rb`:
 ```ruby
 DeviseSlackNotifiable.configure do |config|
-  config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL'
+  config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL' # it's recommended to use rails credentials instead of raw url
 end
 ```
 
