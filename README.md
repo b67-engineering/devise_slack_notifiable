@@ -68,7 +68,15 @@ config.context_fields = [:id, :email, :first_name, :last_name]
 ```
 
 #### Sending own messages
-TODO!
+You can send own messages with this context for anywhere You want inside rails application:
+```ruby
+# Let's assume that customer with id 1 asked for sales contact
+user = User.find(1)
+formatter = ->(entity) { "Customer #{entity.id} asked for sales contact!" }
+
+notifier = DeviseSlackNotifiable::Notifier.new
+notifier.send_message(user, formatter)
+```
 
 #### Message formatting
 You can customize messages by initializer:
