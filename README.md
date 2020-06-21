@@ -32,13 +32,26 @@ DeviseSlackNotifiable.configure do |config|
   # Enabled state
   #   By default integration is disabled. You need to enable it manually on desired environments.
   #   For example production only:
-  #   config.enabled = Rails.env.production?
+  #     config.enabled = Rails.env.production?
+  #   Default: false
   config.enabled = true
 
   # Slack Webhook URL
   #   Required when integration enabled.
   #   It's recommended to use rails credentials instead of raw url (https://edgeguides.rubyonrails.org/security.html#custom-credentials)
+  # Default: nil
   config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL'
+
+  # Confirmation message state
+  #   If You want You can disable sending confirmation message:
+  #     config.confirmation_message_enabled
+  #   Default: true
+
+  # Context fields
+  #   To all messages sent there is context attached that adds entity fields.
+  #   If You want to customize fields:
+  #     config.context_fields = [:id, :email, :first_name, :last_name]
+  #   Default: [:id, :email]
 end
 ```
 
