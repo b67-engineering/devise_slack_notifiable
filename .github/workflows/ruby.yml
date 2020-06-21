@@ -23,3 +23,5 @@ jobs:
 
     - name: Run tests and send coverage
       run: bundle exec rspec
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
