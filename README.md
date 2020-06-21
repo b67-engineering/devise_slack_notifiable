@@ -1,8 +1,6 @@
 # DeviseSlackNotifiable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/devise_slack_notifiable`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Devise slack notifications gem. It posts message after registration and confirmation (if Devise confirmations strategy is enabled).
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Prepare Slack Webhook, It should look like `https://hooks.slack.com/services/XXX/XXX/XXX`.
+
+Not sure how to do that? Check out slack documentation:
+
+    https://api.slack.com/messaging/webhooks#getting_started
+
+After preparing Slack Webhook create initializer (`config/initializers/devise_slack_notifiable.rb`):
+```ruby
+DeviseSlackNotifiable.configure do |config|
+  config.slack_webhook = 'SLACK_WEBHOOK_URL'
+end
+```
+
+And you are ready to go!
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/devise_slack_notifiable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/devise_slack_notifiable/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/invoicity/devise_slack_notifiable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/invoicity/devise_slack_notifiable/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
