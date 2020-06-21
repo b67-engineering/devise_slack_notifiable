@@ -5,10 +5,16 @@ require 'slack-notifier'
 module DeviseSlackNotifiable
   class Notifier
     def initialize
-      @client = Slack::Notifier.new(DeviseSlackNotifiable.configuration.slack_webhook)
+      return unless enabled?
+
+      raise DeviseSlackNotifiable::Errors::Configuration, 'Missing Slack Webhook URL' unless webhook
+
+      @client = Slack::Notifier.new(webhook)
     end
 
     def send_message(message)
+      return true unless enabled?
+
       @client.ping(message)
     end
 
@@ -16,5 +22,12 @@ module DeviseSlackNotifiable
 
     attr_reader :client
 
+    def enabled?
+      DeviseSlackNotifiable.configuration.enabled
+    end
+
+    def webhook
+      DeviseSlackNotifiable.configuration.slack_webhook
+    end
   end
 end

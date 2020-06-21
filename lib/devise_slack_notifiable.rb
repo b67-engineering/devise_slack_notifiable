@@ -3,6 +3,7 @@
 require 'devise_slack_notifiable/version'
 require 'devise_slack_notifiable/configuration'
 require 'devise_slack_notifiable/notifier'
+require 'devise_slack_notifiable/errors/configuration'
 require 'devise/models/slack_notifiable'
 
 module DeviseSlackNotifiable

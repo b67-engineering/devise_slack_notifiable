@@ -2,9 +2,10 @@
 
 module DeviseSlackNotifiable
   class Configuration
-    attr_accessor :slack_webhook
+    attr_accessor :enabled, :slack_webhook
 
     def initialize
+      @enabled = false
       @slack_webhook = nil
     end
   end

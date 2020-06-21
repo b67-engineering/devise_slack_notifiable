@@ -29,7 +29,16 @@ Not sure how to do that? Check out [slack documentation](https://api.slack.com/m
 After preparing Slack Webhook create initializer - `config/initializers/devise_slack_notifiable.rb`:
 ```ruby
 DeviseSlackNotifiable.configure do |config|
-  config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL' # it's recommended to use rails credentials instead of raw url
+  # Enabled state
+  #   By default integration is disabled. You need to enable it manually on desired environments.
+  #   For example production only:
+  #   config.enabled = Rails.env.production?
+  config.enabled = true
+
+  # Slack Webhook URL
+  #   Required when integration enabled.
+  #   It's recommended to use rails credentials instead of raw url (https://edgeguides.rubyonrails.org/security.html#custom-credentials)
+  config.slack_webhook = 'YOUR_SLACK_WEBHOOK_URL'
 end
 ```
 
