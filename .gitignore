@@ -15,3 +15,5 @@
 # IntelliJ
 .idea/
 devise_slack_notifiable.iml
+
+Gemfile.lock
