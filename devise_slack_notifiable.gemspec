@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Devise slack notifactions gem'
   # spec.description   = 'TODO: Write a longer description or delete this line.'
-  spec.homepage      = 'https://github.com/invoicity/devise_slack_notifiable'
+  spec.homepage      = 'https://github.com/b67-engineering/devise_slack_notifiable'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/invoicity/devise_slack_notifiable'
-  spec.metadata['changelog_uri'] = 'https://github.com/invoicity/devise_slack_notifiable/releases'
+  spec.metadata['source_code_uri'] = 'https://github.com/b67-engineering/devise_slack_notifiable'
+  spec.metadata['changelog_uri'] = 'https://github.com/b67-engineering/devise_slack_notifiable/releases'
 
   spec.add_dependency 'rails'
   spec.add_dependency 'devise'

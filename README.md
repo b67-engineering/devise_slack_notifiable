@@ -3,8 +3,8 @@
 Devise slack notifications gem. It posts message after registration and confirmation (if Devise confirmations strategy is enabled).
 
 [![Gem Version](https://badge.fury.io/rb/devise_slack_notifiable.svg)](https://badge.fury.io/rb/devise_slack_notifiable)
-[![codecov](https://codecov.io/gh/invoicity/devise_slack_notifiable/branch/master/graph/badge.svg)](https://codecov.io/gh/invoicity/devise_slack_notifiable)
-[![ruby](https://github.com/invoicity/devise_slack_notifiable/workflows/Ruby/badge.svg)](https://github.com/invoicity/devise_slack_notifiable/actions)
+[![codecov](https://codecov.io/gh/b67-engineering/devise_slack_notifiable/branch/master/graph/badge.svg)](https://codecov.io/gh/invoicity/devise_slack_notifiable)
+[![ruby](https://github.com/b67-engineering/devise_slack_notifiable/workflows/Ruby/badge.svg)](https://github.com/invoicity/devise_slack_notifiable/actions)
 
 ## Installation
 
@@ -117,7 +117,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/invoicity/devise_slack_notifiable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/invoicity/devise_slack_notifiable/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/b67-engineering/devise_slack_notifiable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/invoicity/devise_slack_notifiable/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
