@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['whitemerry']
   spec.email         = ['whitemerry@outlook.com']
 
-  spec.summary       = 'Devise slack notifactions gem'
+  spec.summary       = 'Devise slack notifications gem'
   # spec.description   = 'TODO: Write a longer description or delete this line.'
   spec.homepage      = 'https://github.com/b67-engineering/devise_slack_notifiable'
   spec.license       = 'MIT'
